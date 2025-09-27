@@ -28,7 +28,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: YOUR_USERNAME/student-backend:latest
+          tags: vishalgv10/student-backend:latest
 
       # Build & Push Frontend
       - name: Build and push frontend
