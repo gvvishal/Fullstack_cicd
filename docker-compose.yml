@@ -13,7 +13,7 @@ services:
       - mysql_data:/var/lib/mysql
 
   backend:
-    build: ./backend
+    image: vishalgv10/student-backend:latest   # 🔹 pulls from Docker Hub
     container_name: backend
     restart: always
     ports:
@@ -27,7 +27,7 @@ services:
       - mysql
 
   frontend:
-    build: ./frontend
+    image: vishalgv10/student-frontend:latest  # 🔹 pulls from Docker Hub
     container_name: frontend
     restart: always
     ports:
