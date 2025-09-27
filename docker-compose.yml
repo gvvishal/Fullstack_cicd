@@ -7,7 +7,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
-    # 👇 Removed ports so it won't conflict with local MySQL
     volumes:
       - mysql_data:/var/lib/mysql
 
@@ -15,8 +14,6 @@ services:
     image: vishalgv10/student-backend:latest   # 🔹 pulls from Docker Hub
     container_name: backend
     restart: always
-    ports:
-      - "5000:5000"
     environment:
       DB_HOST: mysql
       DB_USER: ${DB_USER}
@@ -30,7 +27,7 @@ services:
     container_name: frontend
     restart: always
     ports:
-      - "3000:80"
+      - "3000:80"   # only frontend exposed
     depends_on:
       - backend
 
